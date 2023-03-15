@@ -4,17 +4,18 @@ pipeline {
     stages {
         stage('Build Docker Image') {
             steps {
-                script {
-                    dockerImage = docker.build("my-image:latest", " .")
-                }
+                
+                    bat "docker build -t testing ."
+                
             }
         }
 
         stage('Run Docker Container') {
             steps {
-                script {
-                    docker.run("-p 8080:80 my-image:latest")
-                }
+                
+                    bat "docker run -rm testing"
+                
+                
             }
         }
     }
