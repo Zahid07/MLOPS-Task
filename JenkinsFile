@@ -13,7 +13,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 
-                    bat "docker run -rm testing"
+                    bat "docker run --rm testing"
                 
                 
             }
